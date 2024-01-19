@@ -60,7 +60,7 @@
 <body>
     
     <h4 class="judul">LAPORAN PENYELESAIAN PEKERJAAN</h4>
-    <h6 class="judul">UNIT UTILITY - PT. PHAPROS, TBK</h6>
+    <h6 class="judul">UNIT UTILITY MACHINE- Pendidikan Teknik Mesin, Universitas Sriwijaya</h6>
 <table class="tabel1">
 
 @php
