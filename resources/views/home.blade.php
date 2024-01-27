@@ -3,12 +3,7 @@
 @section('konten')
 
 @include('partials.modalReminder')
-
-
-
-
-									
-									
+																		
 								<!--begin::Row-->
 								<div class="row g-5 g-xl-8">
 									<div class="col-xl-3">
@@ -80,8 +75,8 @@
                                                       </svg>
 												</span>
 												<!--end::Svg Icon-->
-												<div class="text-white fw-bolder fs-2 mb-2 mt-5">7 HARI</div>
-												<div class="fw-bold text-white">Maintenance dalam 7 hari kedepan</div>
+												<div class="text-white fw-bolder fs-2 mb-2 mt-5">7 Hari</div>
+												<div class="fw-bold text-white">Maintenance 7 hari kedepan</div>
 											</div>
 											<!--end::Body-->
 										</a>
@@ -104,8 +99,8 @@
                                                       </svg>
 												</span>
 												<!--end::Svg Icon-->
-												<div class="text-white fw-bolder fs-2 mb-2 mt-5">30 HARI</div>
-												<div class="fw-bold text-white">Maintenance dalam 30 hari mendatang</div>
+												<div class="text-white fw-bolder fs-2 mb-2 mt-5">30 Hari</div>
+												<div class="fw-bold text-white">Maintenance 30 Hari kedepan</div>
 											</div>
 											<!--end::Body-->
 										</a>
