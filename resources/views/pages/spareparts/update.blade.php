@@ -28,7 +28,7 @@
 </div>    
 
 <div class="mb-3">
-    <label for="harga" class="form-label">Harga</label>
+    <label for="harga" class="form-label">Jumlah</label>
     <input type="number" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="Harga" value="{{ old('harga', $sparepart->harga) }}" name="harga">
     @error('harga')    
     <div class="invalid-feedback">{{ $message }}</div>
@@ -36,27 +36,13 @@
 </div>
 
 <div class="mb-3">
-    <label for="jumlah" class="form-label">Jumlah</label>
-    <input type="number" class="form-control @error('jumlah') is-invalid @enderror" id="jumlah" placeholder="Jumlah" value="{{ old('jumlah', $sparepart->jumlah) }}" name="jumlah">
+    <label for="jumlah" class="form-label">Keterangan</label>
+    <input type="text" class="form-control @error('jumlah') is-invalid @enderror" id="jumlah" placeholder="Jumlah" value="{{ old('jumlah', $sparepart->jumlah) }}" name="jumlah">
     @error('jumlah')    
     <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<div class="input-group mb-5">
-    <button class="btn btn-primary btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">SATUAN</button>
-    <ul class="dropdown-menu"> 
-      <li><hr class="dropdown-divider"></li>                                  
-      <li><a class="dropdown-item" onclick="setSatuan('Pcs')">Pcs</a></li>
-      <li><a class="dropdown-item" onclick="setSatuan('Liter')">Liter</a></li>
-      <li><a class="dropdown-item" onclick="setSatuan('Kg')">Kg</a></li>
-
-    </ul>
-    <input type="text" class="form-control bagian_form @error('satuan') is-invalid @enderror" aria-label="Satuan" name="satuan" value="{{ old('satuan', $sparepart->satuan) }}" id="satuan" readonly>
-    @error('satuan')    
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
 
 
         <a href="/sparepart">
