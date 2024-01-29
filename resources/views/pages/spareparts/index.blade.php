@@ -3,9 +3,9 @@
 @section('tableHead')
     <th>Item Number</th>
     <th>Sparepart</th>
-    <th>Harga</th>
     <th>Jumlah</th>
-    <th>Satuan</th>
+    <th>Keterangan</th>
+    <!-- <th>Satuan</th> -->
     <th>Aksi</th>
 
 @endsection
@@ -46,9 +46,9 @@ ajax: "/sparepart",
 columns: [
 {data: 'id', name: 'id'},
 {data: 'nama_sparepart', name: 'nama_sparepart'},
-{data: 'harga', name: 'harga', render: $.fn.dataTable.render.number( '.', '.', 0, 'Rp. ' )},
+{data: 'harga', name: 'harga'},
 {data: 'jumlah', name: 'jumlah'},
-{data: 'satuan', name: 'satuan'},
+// {data: 'satuan', name: 'satuan'},
 {data: 'aksi', name: 'aksi', orderable: false, searchable: false},
 //{data: 'kategori', name: 'kategori', orderable: false, searchable: false},
         ]

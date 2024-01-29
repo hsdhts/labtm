@@ -17,8 +17,8 @@ class CreateSparepartsTable extends Migration
             $table->unsignedInteger('id');
             $table->String('nama_sparepart');
             $table->integer('harga');
-            $table->integer('jumlah');
-            $table->enum('satuan', ['Pcs','Kg', 'Buah', 'Pak', 'Biji', 'Liter']);
+            $table->string('jumlah');
+            // $table->enum('satuan', ['Pcs','Kg', 'Buah', 'Pak', 'Biji', 'Liter']);
 
             $table->softDeletes();
             $table->timestamps();
