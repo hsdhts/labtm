@@ -12,6 +12,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SetupFormController;
 use App\Http\Controllers\SparepartController;
+use App\Http\Controllers\PelumasController;
 use App\Http\Controllers\SetupMesinController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\SetupMaintenanceController;
@@ -136,6 +137,13 @@ Route::get('/sparepart/edit/{id}', [SparepartController::class, 'edit'])->middle
 Route::put('/sparepart/update', [SparepartController::class, 'update'])->middleware('admin');
 Route::delete('/sparepart/destroy', [SparepartController::class, 'destroy'])->middleware('admin');    
 
+
+Route::get('/pelumas', [PelumasController::class, 'index'])->middleware('auth')->middleware('teknisi');
+Route::get('/pelumas/create', [PelumasController::class, 'create'])->middleware('auth')->middleware('admin');
+Route::post('/pelumas/create', [PelumasController::class, 'tambah'])->middleware('admin');
+Route::get('/pelumas/edit/{id}', [PelumasController::class, 'edit'])->middleware('auth')->middleware('admin');
+Route::put('/pelumas/update', [PelumasController::class, 'update'])->middleware('admin');
+Route::delete('/pelumas/destroy', [PelumasController::class, 'destroy'])->middleware('admin');   
 /*
 diilangin, diganti pake model jadwal biasa
 Route::get('/sparepart/maintenance/{id}', [MaintenanceController::class, 'tampil_sparepart']);
@@ -163,13 +171,4 @@ Route::post('/laporan/inspeksi', [LaporanController::class, 'laporan_general_ins
 Route::post('/laporan/maintenance', [LaporanController::class, 'laporan_maintenance'])->middleware('supervisor');
 Route::post('/laporan/rencana_realisasi', [LaporanController::class, 'laporan_rencana_realisasi'])->middleware('supervisor');
 
-/*
-
-Route::get('/test', [LaporanController::class, 'laporan_rencana_realisasi']);
-Route::post('/test', [HomeController::class, 'test2']);
-Route::get('/test_load', [SetupMesinController::class, 'select_template']);
-Route::get('/test/calendar', [HomeController::class, 'tes_kalender']);
-Route::get('/test/pdf', [HomeController::class, 'test_pdf']);
-
-*/
 

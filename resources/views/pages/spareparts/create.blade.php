@@ -11,8 +11,8 @@
     
 <div class="mb-3">
     <label for="id" class="form-label">Item Number</label>
-    <input type="text" class="form-control @error('id') is-invalid @enderror" id="id" placeholder="item number" value="{{ old('id') }}" name="id">
-    @error('id')    
+    <input type="text" class="form-control @error('item_number') is-invalid @enderror" id="item_number" placeholder="item number" value="{{ old('item_number') }}" name="item_number">
+    @error('item_number')    
     <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>    

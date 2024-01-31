@@ -20,6 +20,7 @@ class SparepartController extends Controller
                 return view('partials.tombolAksi', ['editPath' => '/sparepart/edit/', 'id'=> $p->id, 'deletePath' => '/sparepart/destroy/' ]);
             })
             ->rawColumns(['aksi'])
+            ->addIndexColumn()
             ->toJson();
 
         }
@@ -44,7 +45,7 @@ class SparepartController extends Controller
     public function tambah(Request $request){
         
         $dataValid = $request->validate([
-            'id' => 'required|numeric|unique:spareparts,id',
+            'item_number' => 'required|numeric|unique:spareparts,item_number',
             'nama_sparepart' => 'required',
             'harga' => 'required|numeric',
             'jumlah' => 'required|numeric',
@@ -74,7 +75,7 @@ class SparepartController extends Controller
     public function update(Request $request){
     
         $dataValid = $request->validate([
-            'id' => 'required|numeric|unique:spareparts,id',
+            'item_number' => 'required|numeric|unique:spareparts,item_number',
             'nama_sparepart' => 'required',
             'harga' => 'required|numeric',
             'jumlah' => 'required|numeric',

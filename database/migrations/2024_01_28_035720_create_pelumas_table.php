@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSparepartsTable extends Migration
+class CreatePelumasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateSparepartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spareparts', function (Blueprint $table) {
+        Schema::create('pelumas', function (Blueprint $table) {
             $table->id();
-            $table->String('item_number')->unique();
-            $table->String('nama_sparepart');
-            $table->integer('harga');
-            $table->integer('jumlah');
-            $table->enum('satuan', ['Pcs','Kg', 'Buah', 'Pak', 'Biji', 'Liter']); 
+            $table->foreignId('sparepart_id')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('metode_pelumasan');
+            $table->string('lubricant');
+            $table->enum('lubricating_interval', ['sekali 60 hari','satu kali per shift']);
+            $table->date('pelumasan_terakhir');
             $table->timestamps();
             $table->softDeletes();
 
@@ -33,6 +33,6 @@ class CreateSparepartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spareparts');
+        Schema::dropIfExists('pelumas');
     }
 }

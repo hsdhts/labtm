@@ -15,8 +15,8 @@ class CreateMaintenanceSparepartTable extends Migration
     {
         Schema::create('maintenance_sparepart', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('sparepart_id');
-            $table->unsignedBigInteger('maintenance_id');
+            $table->foreignId('sparepart_id');
+            $table->foreignId('maintenance_id');
             $table->integer('jumlah');
 
             $table->timestamps();

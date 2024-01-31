@@ -2,11 +2,11 @@
 
 @section('tableHead')
     <th>No</th>
-    <th>Item Number</th>
     <th>Sparepart</th>
-    <th>Harga</th>
-    <th>Jumlah</th>
-    <th>Satuan</th>
+    <th>Metode Pelumas</th>
+    <th>Lubricant</th>
+    <th>Lubricating Interval</th>
+    <th>Pelumasan Terakhir</th>
     <th>Aksi</th>
 
 @endsection
@@ -28,14 +28,7 @@
   class:'min-tablet-l',
   target:[-1,-2]
 },
-{
-  targets: 2,
-  className: 'dt-right'  
-},
-{
-  targets: 3,
-  className: 'dt-right'
-}
+
 
 ],
 pageLength: 25,
@@ -43,17 +36,15 @@ responsive: true,
 processing: true,
 dom:'<"top"lf>rtip<"bottom"><"clear">',
 serverSide: true,
-ajax: "/sparepart",
+ajax: "/pelumas",
 columns: [
-{ data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-
-{data: 'item_number', name: 'item_number'},
+{data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
 {data: 'nama_sparepart', name: 'nama_sparepart'},
-{data: 'harga', name: 'harga', render: $.fn.dataTable.render.number( '.', '.', 0, 'Rp. ' )},
-{data: 'jumlah', name: 'jumlah'},
-{data: 'satuan', name: 'satuan'},
+{data: 'metode_pelumasan', name: 'metode_pelumasan'},
+{data: 'lubricant', name: 'lubricant'},
+{data: 'lubricating_interval', name: 'lubricating_interval'},
+{data: 'pelumasan_terakhir', name: 'pelumasan_terakhir'},
 {data: 'aksi', name: 'aksi', orderable: false, searchable: false},
-//{data: 'kategori', name: 'kategori', orderable: false, searchable: false},
         ]
 
     });
