@@ -11,10 +11,8 @@ class Sparepart extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $guarded =[];
+    protected $guarded =['id'];
 
-
-    
     public function maintenance() {
         return $this->belongsToMany(Maintenance::class);
     }

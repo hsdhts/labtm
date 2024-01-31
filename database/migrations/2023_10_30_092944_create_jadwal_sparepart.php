@@ -15,8 +15,8 @@ class CreateJadwalSparepart extends Migration
     {
         Schema::create('jadwal_sparepart', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('sparepart_id');
-            $table->unsignedBigInteger('jadwal_id');
+            $table->foreignId('sparepart_id');
+            $table->foreignId('jadwal_id');
             $table->integer('jumlah');
 
             $table->timestamps();
