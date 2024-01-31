@@ -48,8 +48,8 @@ class SparepartController extends Controller
             'item_number' => 'required|numeric|unique:spareparts,item_number',
             'nama_sparepart' => 'required',
             'harga' => 'required|numeric',
-            'jumlah' => 'required|numeric',
-            'satuan' => 'required'
+            'jumlah' => 'required',
+            // 'satuan' => 'required'
         ]);
 
         Sparepart::create($dataValid);
@@ -78,8 +78,8 @@ class SparepartController extends Controller
             'item_number' => 'required|numeric|unique:spareparts,item_number',
             'nama_sparepart' => 'required',
             'harga' => 'required|numeric',
-            'jumlah' => 'required|numeric',
-            'satuan' => 'required'
+            'jumlah' => 'required|string',
+            // 'satuan' => 'required'
         ]);
 
         Sparepart::findOrFail($request->id_old)->update($dataValid);
